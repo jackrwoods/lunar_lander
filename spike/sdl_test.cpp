@@ -35,14 +35,35 @@ int main(int argc, char* argv[]) {
 			// Get window surface
 			s = SDL_GetWindowSurface(w);
 
-			// Fill the surface with white
-			SDL_FillRect(s, NULL, SDL_MapRGB(s->format, 0xFF, 0xFF, 0xFF));
+			// Main loop flag
+			bool quit = false;
 
-			// Update the surface
-			SDL_UpdateWindowSurface(w);
+			// Event handler
+			SDL_Event e;
 
-			// Wait before exit
-			SDL_Delay(2000);
+			// Main loop
+			while (!quit) {
+				
+				// Handle events in event queue
+				while (SDL_PollEvent(&e) != 0) {
+					// User requests quit
+					if(e.type == SDL_QUIT) {
+						quit = true;
+					}	
+				}
+				
+				// Fill the surface with white
+				SDL_FillRect(s, NULL, SDL_MapRGB(s->format, 0xFF, 0xFF, 0xFF));
+
+				// Update the surface
+				SDL_UpdateWindowSurface(w);
+			}
+
+			// Destroy SDL Window
+			SDL_DestroyWindow(w);
 		}
+		
+		// Quit SDL subsystems
+		SDL_Quit();
 	}
 }
