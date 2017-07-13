@@ -6,6 +6,7 @@ class Vector2 {
 	private:
 		// Store x and y coordinates
 		int x, y;
+		int type;
 	public:
 		Vector2(int, int);		
 

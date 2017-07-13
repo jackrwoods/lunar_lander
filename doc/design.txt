@@ -1,9 +1,10 @@
 Classes:
 
 Vector2 - done
+TerrainVector
+PlatformVector
 Player (inherits Vector2) - done
 Linked List - done
-PlatformVector
 Terrain (contains doubly-linked list of Vector2s for terrain)
 Platform (inherits Vector2)
 
@@ -13,3 +14,7 @@ Poll for events
 Calculate physics with deltatime
 Draw frame
 
+
+Vector Types:
+1. PlatformVector
+2. TerrainVector

@@ -22,8 +22,8 @@ class Player {
 		int getScore();
 		int getLives();
 		Vector2* getVector(int); // Return vector at
-				     // specified location
-				     // in the array
+				         // specified location
+				         // in the array
 		// Modify the location of the main vector.
 		int setMainVector(int, int);
 
