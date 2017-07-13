@@ -7,6 +7,7 @@
 class Player {
 	private:
 		int fuel, score, lives;
+		Vector2 playerSprite[4];
 	public:
 		Player();
 		
@@ -14,6 +15,11 @@ class Player {
 		int getFuel();
 		int getScore();
 		int getLives();
+		void getVector(int); // Return vector at
+				     // specified location
+				     // in the array
+		// Modify the location of the main vector.
+		int setMainVector(int, int);
 
 		// Manipulators
 		void removeFuel(int); // Pass in the amount
