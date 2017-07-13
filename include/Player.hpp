@@ -1,5 +1,5 @@
-#ifndef PLAYER_CPP
-#define PLAYER_CPP
+#ifndef PLAYER_HPP
+#define PLAYER_HPP
 
 #include "Vector2.hpp"
 

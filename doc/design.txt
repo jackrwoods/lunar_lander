@@ -1,7 +1,8 @@
 Classes:
 
 Vector2 - done
-Player (inherits Vector2)
+Player (inherits Vector2) done
+Linked List
 Terrain (contains doubly-linked list of Vector2s for terrain)
 Platform (inherits Vector2)
 

@@ -1,5 +1,5 @@
-#ifndef VECTOR2_CPP
-#define VECTOR2_CPP
+#ifndef VECTOR2_HPP
+#define VECTOR2_HPP
 
 
 class Vector2 {
