@@ -1,13 +1,19 @@
 #ifndef PLAYER_CPP
 #define PLAYER_CPP
 
-#include "Vector2.h"
+#include "Vector2.hpp"
 
+// Size of the playerSprite array.
+#define _PSSIZE 4
 
 class Player {
 	private:
 		int fuel, score, lives;
-		Vector2 playerSprite[4];
+		// Each vector (with the exception of the
+		// main vector) contains its position
+		// relative to the main vector.
+		Vector2* playerSprite[4];
+
 	public:
 		Player();
 		
@@ -15,7 +21,7 @@ class Player {
 		int getFuel();
 		int getScore();
 		int getLives();
-		void getVector(int); // Return vector at
+		Vector2* getVector(int); // Return vector at
 				     // specified location
 				     // in the array
 		// Modify the location of the main vector.

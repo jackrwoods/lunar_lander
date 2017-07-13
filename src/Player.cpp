@@ -1,4 +1,4 @@
-#include "../include/Player.h"
+#include "../include/Player.hpp"
 
 Player::Player() {
 	this.fuel = 1000;
@@ -26,6 +26,20 @@ void Player::removeLife() {
 	lives -= 1;
 }
 
-void addToScore(int x) {
+void Player::addToScore(int x) {
 	score += x;
+}
+
+Vector2* Player::getVector(int pos) {
+	if (pos >= 0 && pos < _PSSIZE) {
+		return playerSprite[pos];
+	} else {
+		return NULL;
+	}	
+}
+
+void Player::setMainVector(int x, int y) {
+	
+	playerSprite[0].setX(x);
+	playerSprite[0].setY(y);
 }
