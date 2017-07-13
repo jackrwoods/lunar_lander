@@ -6,19 +6,4 @@ Terrain (contains doubly-linked list of Vector2s for terrain)
 Platform (inherits Vector2)
 
 
-render and update running at framerate
-update runs on delta time, physics is at a set rate
-physics should run lower than the framerate because generally the framerate will lag, and physics cannot lag (to account for little dips)
 
-assume open space in update then render
-physics calculates collisions and does that
-
-
-1 Thread:
-Update physics at a constant rate.
-Physics pulls acceleration from player memory.
-Physics is double-buffered.
-
-1 Thread:
-Get player input and update acceleration.
-Render currently accessible physics buffer.
