@@ -5,5 +5,9 @@ Player (inherits Vector2)
 Terrain (contains doubly-linked list of Vector2s for terrain)
 Platform (inherits Vector2)
 
+Main Loop:
 
+Poll for events
+Calculate physics with deltatime
+Draw frame
 
