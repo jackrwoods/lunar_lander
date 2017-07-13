@@ -20,6 +20,8 @@ typedef struct LinkedList {
 void initLinkedList(LinkedList*);
 LinkedList* newLinkedList();
 
+/* freeLinkedList frees memory associated with each link,
+   while deleteLinkedList frees the entire linked list. */
 void freeLinkedList(LinkedList*);
 void deleteLinkedList(LinkedList*);
 
