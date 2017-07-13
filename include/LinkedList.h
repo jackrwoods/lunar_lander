@@ -21,9 +21,13 @@ void initLinkedList(LinkedList*);
 LinkedList* newLinkedList();
 
 /* freeLinkedList frees memory associated with each link,
-   while deleteLinkedList frees the entire linked list. */
+   while deleteLinkedList frees the entire linked list.
+   freeLink frees the memory associated with 1 link. */
+void _freeLink(Link*);
 void freeLinkedList(LinkedList*);
 void deleteLinkedList(LinkedList*);
 
-void addLinkedList(LinkedList*, Vector2*);
+/* Adds the element passed in after the current element. */
+void addLinkedList(LinkedList*, _TYPE*);
+/* Searches for the element passed as a pointer into the function. */
 void removeLinkedList(LinkedList*, Link*);
