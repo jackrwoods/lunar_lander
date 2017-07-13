@@ -7,7 +7,8 @@ class Vector2 {
 		// Store x and y coordinates
 		int x, y;
 	public:
-		
+		Vector2(int, int);		
+
 		// Getters and setters
 		int getX();
 		int getY();
