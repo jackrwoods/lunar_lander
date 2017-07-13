@@ -1,0 +1,7 @@
+Classes:
+
+Vector2
+Player (inherits Vector2)
+Terrain (contains doubly-linked list of Vector2s for terrain)
+Platform (inherits Vector2)
+
