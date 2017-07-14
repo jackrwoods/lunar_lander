@@ -18,3 +18,5 @@ Draw frame
 Vector Types:
 1. PlatformVector
 2. TerrainVector
+
+https://wiki.libsdl.org/SDL_RenderDrawLine
