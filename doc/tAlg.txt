@@ -1,0 +1,6 @@
+# Terrain Generation Algorithm Pseudocode
+
+Calculate a random size within a range. This determines the number of vectors.
+In a loop, calculate 5 * size number of heights. Average these to find the heights of the final vectors.
+Randomly choose between 3-5 pairs of vectors and replace them with PlatformVectors.
+Point the last vector to the first vector in the LL.

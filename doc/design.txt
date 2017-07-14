@@ -7,6 +7,7 @@ Player (inherits Vector2) - done
 Linked List - done
 Terrain (contains doubly-linked list of Vector2s for terrain)
 Platform (inherits Vector2)
+Update Makefile
 
 Main Loop:
 
