@@ -16,6 +16,8 @@ OBJ_NAME = ./bin/lunar_lander
 
 #This is the target that compiles our executable
 default :
+	mkdir bin
+	mkdir build
 	$(CC) $(OBJS) $(COMPILER_FLAGS) $(LINKER_FLAGS) -o $(OBJ_NAME)
 clean:
 	rm -f -r -v bin build
