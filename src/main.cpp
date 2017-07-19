@@ -2,16 +2,18 @@
 #include "SDL2/SDL.h"
 #include <stdio.h>
 #include <iostream>
+#include <ctime>
+#include "GameHandler.hpp"
 
 int main(int argc, char* argv[]) {
 	// Create empty pointer to SDL objects
 	SDL_Window* w = NULL; // The window we render to
 	SDL_Surface* s = NULL; // The surface contained in the window
-	
+
 	// Get current display mode (resolution and refresh rate)
 	SDL_DisplayMode d;
 	int SCREEN_WIDTH, SCREEN_HEIGHT;
-	
+
 	/* Initialize SDL
 	 * Note that we only initialized SDL's video subsystem by passing
 	 * the SDL_INIT_VIDEO flag. */
@@ -26,11 +28,11 @@ int main(int argc, char* argv[]) {
 		SCREEN_HEIGHT = d.h;
 
 		// Create a window
-		w = SDL_CreateWindow("SDL Test Window", 0, 0, SCREEN_WIDTH,
+		w = SDL_CreateWindow("Lunar Lander", 0, 0, SCREEN_WIDTH,
 				     SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 		if (w == NULL) {
 			std::cout << "Window could not be created! SDL_Error: n"
-				  << SDL_GetError() << std::endl; 
+				  << SDL_GetError() << std::endl;
 		} else {
 			// Get window surface
 			s = SDL_GetWindowSurface(w);
@@ -42,18 +44,39 @@ int main(int argc, char* argv[]) {
 			SDL_Event e;
 
 			// Main loop
+			long oldT = time(); // Begin time.
 			while (!quit) {
-				
+
+				// Calculate delta
+				long newT = time();
+				int delta = newT - oldT;
+				oldT = newT;
+
 				// Handle events in event queue
 				while (SDL_PollEvent(&e) != 0) {
 					// User requests quit
 					if(e.type == SDL_QUIT) {
 						quit = true;
-					}	
+					}
+
+					// Update player thrust if the user scrolls.
+					if (e.type == SDL_MOUSEWHEEL) {
+						ghUpdateThrust(e.y, delta);
+					}
+
+					// Update player rotation/direction
+					if (e.type == SDL_KEYDOWN) {
+						ghUpdateRotation(e.keysym.sym, delta);
+					}
 				}
-				
-				// Fill the surface with white
-				SDL_FillRect(s, NULL, SDL_MapRGB(s->format, 0xFF, 0xFF, 0xFF));
+
+				// Check for collisions & update positions.
+				ghCollisionsCheck(delta);
+
+				// Fill the surface with black as the background
+				SDL_FillRect(s, NULL, SDL_MapRGB(s->format, 0x00, 0x00, 0x00));
+
+				// Render the next frame
 
 				// Update the surface
 				SDL_UpdateWindowSurface(w);
@@ -62,7 +85,7 @@ int main(int argc, char* argv[]) {
 			// Destroy SDL Window
 			SDL_DestroyWindow(w);
 		}
-		
+
 		// Quit SDL subsystems
 		SDL_Quit();
 	}
