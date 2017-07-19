@@ -1,12 +1,11 @@
 Classes:
 
 Vector2 - done
-TerrainVector
-PlatformVector
+TerrainVector - done
+PlatformVector - done
 Player (inherits Vector2) - done
 Linked List - done
-Terrain (contains doubly-linked list of Vector2s for terrain)
-Platform (inherits Vector2)
+Terrain (contains doubly-linked list of Vector2s for terrain) - done
 Update Makefile
 
 Main Loop:
@@ -21,3 +20,18 @@ Vector Types:
 2. TerrainVector
 
 https://wiki.libsdl.org/SDL_RenderDrawLine
+
+
+Gameplay:
+
+  Player will start at the top of the screen "falling out of orbit." Below,
+there will be terrain/obstacles to avoid as the player tries to land on a
+platform. Platforms are determined by the line segment connecting two
+PlatformVectors. If the player's ship is almost horizontal above a platform,
+and they are falling at a speed less than -7 x, the ship will land and the
+player will be rewarded the corresponding number of points for that platform.
+Otherwise, the player's ship will crash.
+
+  The ship will be controlled by W,A, & D where W engages thrust, A applies
+rotation to the left, and D applies rotation to the right. Analog thrust
+control will be implemented using the mouse scroll wheel.

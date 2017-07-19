@@ -22,8 +22,8 @@ class Vector2 {
 		void addToY(int); // Adds integer parameter
 				  // to current y value
 		/* NOTE: To subtract from x or y, pass  a
-			 negative value into the function.
-}
+			 negative value into the function.*/
+};
 
 
 #endif

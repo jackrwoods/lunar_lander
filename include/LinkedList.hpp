@@ -1,16 +1,22 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
+
+#include "Vector2.hpp"
+
+
 #define _TYPE Vector2
 #define _TYPE_SIZE sizeof(_TYPE);
 
-typedef struct Link {
-	link* next, prev;
+
+struct Link {
+	Link* next;
+	Link*  prev;
 	_TYPE* data;
 };
 
-typedef struct LinkedList {
-	link* current;
+struct LinkedList {
+	Link* current;
 	int size;
 };
 
@@ -31,3 +37,5 @@ void deleteLinkedList(LinkedList*);
 void addLinkedList(LinkedList*, _TYPE*);
 /* Searches for the element passed as a pointer into the function. */
 void removeLinkedList(LinkedList*, Link*);
+
+#endif
