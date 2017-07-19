@@ -8,15 +8,15 @@
 
 class Player {
 	private:
-		int fuel, score, lives;
+		int fuel, score, lives, dir;
 		// Each vector (with the exception of the
 		// main vector) contains its position
 		// relative to the main vector.
-		Vector2* playerSprite[4];
+		Vector2* playerSprite[_PSSIZE];
 
 	public:
 		Player();
-		
+
 		// Getters and setters
 		int getFuel();
 		int getScore();
@@ -33,6 +33,8 @@ class Player {
 		void removeLife();    // Remove 1 life.
 		void addToScore(int); // Add parameter to
 				      // to score.
+		Vector2* rotateVectors(int); // Return rotated
+							// player vectors.
 }
 
 
