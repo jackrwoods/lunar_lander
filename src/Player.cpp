@@ -8,7 +8,8 @@ Player::Player() {
 	this.score = 0;
 	this.lives = 3;
 	this.dir = 0;
-	
+	this.thrust = 0;
+
 	playerSprite[0]->setX(960); // 960 is 1/2 of our target resolution.
 	playerSprite[0]->setY(100); // Player should spawn on-screen.
 
