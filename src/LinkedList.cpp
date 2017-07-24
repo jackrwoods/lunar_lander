@@ -71,3 +71,9 @@ void removeLinkedList(LinkedList* l, Link* li) {
 		i++;
 	}
 }
+
+void getLinkedList(LinkedList* l, int val) {
+	while (val > current->data && current->data < current->next->data) {
+		current = current->next;
+	}
+}
