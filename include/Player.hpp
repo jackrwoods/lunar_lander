@@ -8,7 +8,7 @@
 
 class Player {
 	private:
-		int fuel, score, lives, dir;
+		int fuel, score, lives, dir, thrust;
 		// Each vector (with the exception of the
 		// main vector) contains its position
 		// relative to the main vector.

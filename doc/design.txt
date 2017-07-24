@@ -5,11 +5,15 @@ TerrainVector - done
 PlatformVector - done
 Player (inherits Vector2) - done
 Linked List - done
-Terrain (contains doubly-linked list of Vector2s for terrain) - done
+Terrain (contains doubly-linked list of Vector2s for terrain) - done\
+
+
+TODO:
+GameHandler - tackle physics related stuff
 Update Makefile
 
-Main Loop:
 
+Main Loop:
 Poll for events
 Calculate physics with deltatime
 Draw frame
