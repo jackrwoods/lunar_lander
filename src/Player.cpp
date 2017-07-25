@@ -46,6 +46,10 @@ void Player::addToScore(int x) {
 	score += x;
 }
 
+void Player::setThrust(int thrust) {
+	this.thrust = thrust;
+}
+
 Vector2* Player::getVector(int pos) {
 	if (pos >= 0 && pos < _PSSIZE) {
 		return playerSprite[pos];

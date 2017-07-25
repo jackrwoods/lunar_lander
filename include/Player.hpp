@@ -33,6 +33,7 @@ class Player {
 		void removeLife();    // Remove 1 life.
 		void addToScore(int); // Add parameter to
 				      // to score.
+		void setThrust(int);
 		Vector2* rotateVectors(int); // Return rotated
 							// player vectors.
 }
