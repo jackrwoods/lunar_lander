@@ -15,11 +15,11 @@ void GameHandler::UpdateThrust(int y, int delta) {
   p.setThrust(thrust);
 }
 
-void GameHandler::UpdateRotation(SDL_Keysym* k, int delta) {
+void GameHandler::UpdateRotation(SDL_Keysym k, int delta) {
     int currentDir = p.getDir();
-    if (k->sym == SDLK_a) {
+    if (k.sym == SDLK_a) {
       currentDir += delta * 90 / 1000; // Turn the ship 90 degrees max every second.
-    } else if (k->sym == SDLK_d) {
+    } else if (k.sym == SDLK_d) {
       currentDir += delta * 90 * -1 / 1000;
     }
 }
