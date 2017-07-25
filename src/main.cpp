@@ -43,6 +43,9 @@ int main(int argc, char* argv[]) {
 			// Event handler
 			SDL_Event e;
 
+			// Initialize Game
+
+
 			// Main loop
 			long oldT = time(); // Begin time.
 			while (!quit) {
@@ -59,6 +62,7 @@ int main(int argc, char* argv[]) {
 						quit = true;
 					}
 
+					//TODO: Fix gamehandler stuff
 					// Update player thrust if the user scrolls.
 					if (e.type == SDL_MOUSEWHEEL) {
 						ghUpdateThrust(e.y, delta);
