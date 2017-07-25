@@ -34,6 +34,18 @@ int Player::getLives() {
 	return lives;
 }
 
+int Player::getDir() {
+	return dir;
+}
+
+int Player::getXVel() {
+	return xVel;
+}
+
+int Player::getYVel() {
+	return yVel;
+}
+
 void Player::removeFuel(int x) {
 	fuel -= x;
 }
@@ -48,6 +60,11 @@ void Player::addToScore(int x) {
 
 void Player::setThrust(int thrust) {
 	this.thrust = thrust;
+}
+
+void Player::setVelocity(int x, int y) {
+	xVel = x;
+	yVel = y;
 }
 
 Vector2* Player::getVector(int pos) {
