@@ -18,6 +18,12 @@ class GameHandler {
 
     /* Change the player's direction based on keyboard input. */
     void UpdateRotation(SDL_Keysym, int);
+
+    /* Check for collisions and update player/terrain locations. */
+    void CollisionsCheck();
+
+    /* Uses the SDL window surface buffer to render the current frame. */
+    void renderFrame(SDL_Surface);
 };
 
 #endif
