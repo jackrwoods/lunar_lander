@@ -53,3 +53,7 @@ void Terrain::_generateTerrain(int size) {
 		current->next->data = new PlatformVector*(x2, y);
 	}
 }
+
+LinkedList* Terrain::getVectors() {
+	return vectors;
+}
