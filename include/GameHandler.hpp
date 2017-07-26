@@ -20,7 +20,7 @@ class GameHandler {
     void UpdateRotation(SDL_Keysym, int);
 
     /* Check for collisions and update player/terrain locations. */
-    void CollisionsCheck();
+    void CollisionsCheck(int);
 
     /* Uses the SDL window surface buffer to render the current frame. */
     void renderFrame(SDL_Surface);
