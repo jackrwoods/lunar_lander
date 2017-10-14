@@ -8,7 +8,10 @@ class Terrain {
 		LinkedList* vectors;
 	public:
 		Terrain(int); // Pass in terrain size
+
 		void _generateTerrain(int);
-}
+		
+		LinkedList* getVectors();
+};
 
 #endif

@@ -43,6 +43,9 @@ int main(int argc, char* argv[]) {
 			// Event handler
 			SDL_Event e;
 
+			// Initialize Game
+			GameHandler* gh = new GameHandler();
+
 			// Main loop
 			long oldT = time(); // Begin time.
 			while (!quit) {
@@ -61,22 +64,23 @@ int main(int argc, char* argv[]) {
 
 					// Update player thrust if the user scrolls.
 					if (e.type == SDL_MOUSEWHEEL) {
-						ghUpdateThrust(e.y, delta);
+						gh.UpdateThrust(e.y, delta);
 					}
 
 					// Update player rotation/direction
 					if (e.type == SDL_KEYDOWN) {
-						ghUpdateRotation(e.keysym.sym, delta);
+						gh.UpdateRotation(e.keysym.sym, delta);
 					}
 				}
 
 				// Check for collisions & update positions.
-				ghCollisionsCheck(delta);
+				gh.CollisionsCheck(delta);
 
 				// Fill the surface with black as the background
 				SDL_FillRect(s, NULL, SDL_MapRGB(s->format, 0x00, 0x00, 0x00));
 
-				// Render the next frame
+				// Render the next frame above the black surface
+				gh.renderFrame(s);
 
 				// Update the surface
 				SDL_UpdateWindowSurface(w);
