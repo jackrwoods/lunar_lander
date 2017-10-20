@@ -50,8 +50,15 @@ void GameHandler::CollisionsCheck(int delta) {
   Vector2* current = getLinkedList(vectors, x);
 
   // PlatformVectors perform differently than normal TerrainVectors
+  // but both calculations require the line
+  float m = current->data->getY() - current->next->data->getY() /
+            current->data->getX() - current->next->data->getX();
+  
   if (current->data->type == 1 && current->next->type == 1) {
     // if both vectors below the player are platforms, then test for landing
+    if () {
+
+    }
   } else {
     // if the ground below is not a platform, all collisions result in death
   }
