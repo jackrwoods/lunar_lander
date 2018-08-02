@@ -1,15 +1,15 @@
 #ifndef GAMEHANDLER_HPP
 #define GAMEHANDLER_HPP
 
-#include "SDL2/SDL.h"
+#include "../lib/include/SDL.h"
 #include "Player.hpp"
 #include "Terrain.hpp"
 #include <cmath>
 
 class GameHandler {
   private:
-    Player p;
-    Terrain t;
+    Player* p;
+    Terrain* t;
   public:
     GameHandler();
 
@@ -23,7 +23,7 @@ class GameHandler {
     void CollisionsCheck(int);
 
     /* Uses the SDL window surface buffer to render the current frame. */
-    void renderFrame(SDL_Surface);
+    void renderFrame(SDL_Surface *);
 };
 
 #endif

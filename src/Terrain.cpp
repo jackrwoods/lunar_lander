@@ -13,7 +13,7 @@ void Terrain::_generateTerrain(int size) {
 	 * 5 pairs of PlatformVectors.
 	 * For more info, please reference doc/tAlg.txt.
 	 */
-	srand(time(NULL)); //Seed rand50-540
+	srand(time(NULL)); //Seed rand
 	vectors = newLinkedList(); // Create new LL for terrain vectors
 
 	// Calculate heights using averages

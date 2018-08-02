@@ -1,9 +1,9 @@
 //USing SDL and standard IO
-#include "SDL2/SDL.h"
+#include "../lib/include/SDL.h"
 #include <stdio.h>
 #include <iostream>
 #include <ctime>
-#include "GameHandler.hpp"
+#include "../include/GameHandler.hpp"
 
 int main(int argc, char* argv[]) {
 	// Create empty pointer to SDL objects
@@ -46,12 +46,16 @@ int main(int argc, char* argv[]) {
 			// Initialize Game
 			GameHandler* gh = new GameHandler();
 
+			// Begin time
+			time_t oldT;
+			time(&oldT);
+
 			// Main loop
-			long oldT = time(); // Begin time.
 			while (!quit) {
 
 				// Calculate delta
-				long newT = time();
+				time_t newT;
+				time(&newT);
 				int delta = newT - oldT;
 				oldT = newT;
 
@@ -64,23 +68,23 @@ int main(int argc, char* argv[]) {
 
 					// Update player thrust if the user scrolls.
 					if (e.type == SDL_MOUSEWHEEL) {
-						gh.UpdateThrust(e.y, delta);
+						gh->UpdateThrust(e.wheel.y, delta);
 					}
 
 					// Update player rotation/direction
 					if (e.type == SDL_KEYDOWN) {
-						gh.UpdateRotation(e.keysym.sym, delta);
+						gh->UpdateRotation(e.key.keysym, delta);
 					}
 				}
 
 				// Check for collisions & update positions.
-				gh.CollisionsCheck(delta);
+				gh->CollisionsCheck(delta);
 
 				// Fill the surface with black as the background
 				SDL_FillRect(s, NULL, SDL_MapRGB(s->format, 0x00, 0x00, 0x00));
 
 				// Render the next frame above the black surface
-				gh.renderFrame(s);
+				gh->renderFrame(s);
 
 				// Update the surface
 				SDL_UpdateWindowSurface(w);

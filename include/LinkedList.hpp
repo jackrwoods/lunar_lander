@@ -39,6 +39,6 @@ void addLinkedList(LinkedList*, _TYPE*);
 void removeLinkedList(LinkedList*, Link*);
 
 /* Returns a pointer to the location where an element should be inserted */
-void getLinkedList(LinkedList*, int);
+Link* getLinkedList(LinkedList*, int);
 
 #endif

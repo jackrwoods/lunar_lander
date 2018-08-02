@@ -8,16 +8,19 @@ class Vector2 {
 		int x, y;
 		int type;
 	public:
-		Vector2(int, int);		
+		Vector2(int, int);
 
 		// Getters and setters
 		int getX();
 		int getY();
 		void setX(int);
 		void setY(int);
-		
+
+		// Returns type
+		int getType();
+
 		// Helpful functions
-		void addToX(int); // Adds integer parameter 
+		void addToX(int); // Adds integer parameter
 				  // to current x value
 		void addToY(int); // Adds integer parameter
 				  // to current y value

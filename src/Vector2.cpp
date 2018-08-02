@@ -1,4 +1,4 @@
-#include "../include/Vector2.hpp"	
+#include "../include/Vector2.hpp"
 
 Vector2::Vector2 (int x, int y) {
 	this.x = x;
@@ -11,6 +11,10 @@ int Vector2::getX() {
 
 int Vector2::getY() {
 	return y;
+}
+
+int Vector2::getType() {
+	return type;
 }
 
 void Vector2::addToX(int x) {

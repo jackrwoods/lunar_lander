@@ -8,7 +8,7 @@
 
 class Player {
 	private:
-		int fuel, score, lives, dir, thrust, xVel, yVel;
+		int fuel, score, lives, dir, thrust, xVel, yVel, x, y;
 		// Each vector (with the exception of the
 		// main vector) contains its position
 		// relative to the main vector.
@@ -24,6 +24,8 @@ class Player {
 		int getDir();
 		int getXVel();
 		int getYVel();
+		int getX();
+		int getY();
 		Vector2* getVector(int); // Return vector at
 				         // specified location
 				         // in the array
@@ -40,7 +42,7 @@ class Player {
 		void setVelocity(int, int);// X and Y respectively
 		Vector2* rotateVectors(int); // Return rotated
 							// player vectors.
-}
+};
 
 
 #endif

@@ -1,14 +1,15 @@
 #include "../include/Player.hpp"
 #include <cmath>
+#include <cstddef>
 
 #define M_PI 3.14159265358979323846  /* pi */
 
 Player::Player() {
-	this.fuel = 1000;
-	this.score = 0;
-	this.lives = 3;
-	this.dir = 0;
-	this.thrust = 0;
+	this->fuel = 1000;
+	this->score = 0;
+	this->lives = 3;
+	this->dir = 0;
+	this->thrust = 0;
 
 	playerSprite[0]->setX(960); // 960 is 1/2 of our target resolution.
 	playerSprite[0]->setY(100); // Player should spawn on-screen.
@@ -46,6 +47,14 @@ int Player::getYVel() {
 	return yVel;
 }
 
+int Player::getX() {
+	return x;
+}
+
+int Player::getY() {
+	return y;
+}
+
 void Player::removeFuel(int x) {
 	fuel -= x;
 }
@@ -59,7 +68,7 @@ void Player::addToScore(int x) {
 }
 
 void Player::setThrust(int thrust) {
-	this.thrust = thrust;
+	this->thrust = thrust;
 }
 
 void Player::setVelocity(int x, int y) {

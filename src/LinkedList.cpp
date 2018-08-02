@@ -2,6 +2,7 @@
 /* Doubly-Linked List Implementation by Jack Woods */
 
 #include "../include/LinkedList.hpp"
+#include <cstddef>
 
 
 void initLinkedList(LinkedList* l) {
@@ -72,7 +73,8 @@ void removeLinkedList(LinkedList* l, Link* li) {
 	}
 }
 
-void getLinkedList(LinkedList* l, int val) {
+Link* getLinkedList(LinkedList* l, int val) {
+	Link* current = l->current;
 	while (val > current->data->getX() && current->data->getX() < current->next->data->getX()) {
 		current = current->next;
 	}

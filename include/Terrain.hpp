@@ -1,7 +1,7 @@
 #ifndef TERRAIN_HPP
 #define TERRAIN_HPP
 
-#include "LinkedList.h"
+#include "LinkedList.hpp"
 
 class Terrain {
 	private:
@@ -10,7 +10,7 @@ class Terrain {
 		Terrain(int); // Pass in terrain size
 
 		void _generateTerrain(int);
-		
+
 		LinkedList* getVectors();
 };
 
