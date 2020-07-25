@@ -19,6 +19,14 @@ int Vector2::getY() {
 	return y;
 }
 
+void Vector2::setX(int x) {
+	this->x = x;
+}
+
+void Vector2::setY(int y) {
+	this->y = y;
+}
+
 VectorType Vector2::getType() {
 	return type;
 }
