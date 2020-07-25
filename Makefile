@@ -1,5 +1,5 @@
 #OBJS specifies which files to compile as part of the project
-OBJS = ./src/main.cpp ./src/GameHandler.cpp ./src/LinkedList.cpp ./src/PlatformVector.cpp ./src/Player.cpp ./src/Terrain.cpp ./src/TerrainVector.cpp ./src/Vector2.cpp
+OBJS = ./src/main.cpp ./src/GameHandler.cpp ./src/LinkedList.cpp ./src/Player.cpp ./src/Terrain.cpp ./src/Vector2.cpp
 
 #cc specifies the compiler in use
 CC = g++
@@ -9,13 +9,14 @@ CC = g++
 COMPILER_FLAGS = -w
 
 #LINKER_FLAGS specifies the libraries we're linking to
-LINKER_FLAGS =
+LINKER_FLAGS = -lSDL2
 
 #OBJ_NAME specifies the name of our executable
 OBJ_NAME = ./bin/lunar_lander
 
 #This is the target that compiles our executable
 default :
+	rm -rf bin build
 	mkdir bin
 	mkdir build
 	$(CC) $(OBJS) $(COMPILER_FLAGS) $(LINKER_FLAGS) -o $(OBJ_NAME)

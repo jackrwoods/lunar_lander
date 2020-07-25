@@ -30,7 +30,7 @@ class Player {
 				         // specified location
 				         // in the array
 		// Modify the location of the main vector.
-		int setMainVector(int, int);
+		void setMainVector(int, int);
 
 		// Manipulators
 		void removeFuel(int); // Pass in the amount

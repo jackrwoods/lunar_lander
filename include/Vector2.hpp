@@ -1,14 +1,16 @@
 #ifndef VECTOR2_HPP
 #define VECTOR2_HPP
 
+enum VectorType { TERRAIN, PLATFORM };
 
 class Vector2 {
 	private:
 		// Store x and y coordinates
 		int x, y;
-		int type;
+		VectorType type;
 	public:
 		Vector2(int, int);
+		Vector2(int, int, VectorType);
 
 		// Getters and setters
 		int getX();
@@ -17,7 +19,7 @@ class Vector2 {
 		void setY(int);
 
 		// Returns type
-		int getType();
+		VectorType getType();
 
 		// Helpful functions
 		void addToX(int); // Adds integer parameter

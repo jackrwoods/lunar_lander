@@ -1,7 +1,7 @@
 #ifndef GAMEHANDLER_HPP
 #define GAMEHANDLER_HPP
 
-#include "../lib/include/SDL.h"
+#include <SDL2/SDL.h>
 #include "Player.hpp"
 #include "Terrain.hpp"
 #include <cmath>

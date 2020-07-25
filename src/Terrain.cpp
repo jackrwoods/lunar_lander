@@ -1,6 +1,7 @@
 #include "../include/Terrain.hpp"
-#include "../include/TerrainVector.hpp"
+#include "../include/Vector2.hpp"
 #include <cstdlib>
+#include <time.h>
 
 Terrain::Terrain(int size) {
 	_generateTerrain(size);
@@ -25,7 +26,7 @@ void Terrain::_generateTerrain(int size) {
 		height /= 5; // height is the average of 5 rand() calls for terrain smoothing
 
 		// 1920X1080 is the target resolution. Anything rendered is scaled from that.
-		addLinkedList(vectors, new TerrainVector(1920/size, height)); // Equallly spaced-out vectors
+		addLinkedList(vectors, new Vector2(1920/size, height, VectorType::TERRAIN)); // Equallly spaced-out vectors
 	}
 
 	// Overwrite TerrainVectors with PlatformVectors
@@ -35,22 +36,22 @@ void Terrain::_generateTerrain(int size) {
 		do {
 			int loc = rand() % 1 + size;
 			for (int j = 0; j <= loc; j++) {
-				vectors->current = current->next;
+				vectors->current = vectors->current->next;
 			}
-		} while (vectors->current->type != 1); // Ensure current is not a platform.
+		} while (vectors->current->data->getType() != VectorType::PLATFORM); // Ensure current is not a platform.
 
 		// Get x and y for new vectors
-		int y = current->data->getY();
-		int x1 = current->data->getX();
-		int x2 = current->data->getY();
+		int y = vectors->current->data->getY();
+		int x1 = vectors->current->data->getX();
+		int x2 = vectors->current->data->getY();
 
 		// Delete old vectors
-		delete (current->data);
-		delete (current->next->data);
+		delete (vectors->current->data);
+		delete (vectors->current->next->data);
 
 		// Create two new PlatformVectors
-		current->data = new PlatformVector*(x1, y);
-		current->next->data = new PlatformVector*(x2, y);
+		vectors->current->data = new Vector2(x1, y, VectorType::PLATFORM);
+		vectors->current->next->data = new Vector2(x2, y, VectorType::PLATFORM);
 	}
 }
 

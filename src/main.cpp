@@ -1,5 +1,5 @@
 //USing SDL and standard IO
-#include "../lib/include/SDL.h"
+#include <SDL2/SDL.h>
 #include <stdio.h>
 #include <iostream>
 #include <ctime>
